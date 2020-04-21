@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.informaticaconsutoria.cursomc.domain.Produto;
-import com.informaticaconsutoria.cursomc.services.ProdutoService;
+import com.informaticaconsutoria.cursomc.domain.Cliente;
+import com.informaticaconsutoria.cursomc.services.ClienteService;
 
 @RestController
-@RequestMapping(value = "/produtos")
-public class ProdutoResource {
+@RequestMapping(value = "/clientes")
+public class ClienteResource {
 
 	@Autowired
-	private ProdutoService service;
+	private ClienteService service;
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<?> buscar(@PathVariable Integer id) {
-		Produto obj = service.buscar(id);
+		Cliente obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
 	}
 
